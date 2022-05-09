@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <button id="get" onclick="get()">get style</button>
+        <button id="set" onclick="set()">set style</button>
+        <button id="Default" onclick="Default()">Default style</button>
+    </div>
+</body>
+</html>
+<script>
+    var box=document.querySelector('.box')
+    var button=document.querySelectorAll('button')
+    console.log(button);
+    function get(){
+        alert("width:400px"+"height:200px"+"background:rgb(249, 230, 159,0.5);")
+    }
+    function set(){
+        box.style.height="100px",
+        box.style.border="skyblue solid 1px",
+        box.style.background="rgba(159, 214, 249, 0.5)"
+    }
+    function Default(){
+        box.style.height="200px"
+        box.style.width="400px"
+        box.style.background="rgb(249, 230, 159,0.5)"
+        box.style.border="solid 1px orange"
+    }
+</script>
+<style>
+    .box{
+        width: 400px;
+        height: 200px;
+        background:rgb(249, 230, 159,0.5);
+        border: solid 1px orange;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin: auto;
+    }
+    button{
+        background-color: orange;
+        color: #fff;
+        padding: 10px;
+        border: 0;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+</style>

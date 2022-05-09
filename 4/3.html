@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <span id="f">01</span>分钟
+        <span id="m">60</span>秒
+    </div>
+</body>
+</html>
+<style>
+    .box{
+        width: 200px;
+        height: 80px;
+        background: #000;
+        text-align: center;
+        color: white;
+    }
+    span{
+        display: inline-block;
+        width: 60px;
+        height: 40px;
+        line-height: 40px;
+        margin-top: 20px;
+        background: white;
+        text-align: center;
+        color: #000;
+    }
+</style>
+<script>
+    function coun(){
+        var sta=new Date().getTime()
+        var en=new Date('2022-5-2 10:00').getTime()
+        var tiem=sta-en
+        setInterval(function(){
+            var z=Math.floor(tiem/1000/60%60)
+            var mm=Math.floor(tiem/1000%60)
+            console.log(z,mm);
+            document.getElementById("f").innerHTML=z
+            document.getElementById("m").innerHTML=mm
+            tiem-=1000
+        },1000)
+        if(tiem==0){
+            clearInterval(tiem)
+        }
+    }
+    coun()
+</script>

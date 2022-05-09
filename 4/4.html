@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>站长之家</li>
+        <li>行业资讯</li>
+        <li>站长咨询</li>
+        <li>网站运营</li>
+        <li>设计在线</li>
+        <li>网络编程</li>
+        <li>联盟咨询</li>
+        <li>服务器</li>
+    </ul>
+    <div class="box" style="display: none;">
+        <a href="javascript:;">收购融资</a>|
+        <a href="javascript:;">门户动态</a>|
+        <a href="javascript:;">搜索引擎</a>|
+        <a href="javascript:;">网络游戏</a>|
+        <a href="javascript:;">电子商务</a>|
+        <a href="javascript:;">广告传媒</a>|
+        <a href="javascript:;">厂商开发</a>
+    </div>
+    <div class="box" style="display: none;">
+        <a href="javascript:;">收购融资</a>|
+        <a href="javascript:;">门户动态</a>|
+        <a href="javascript:;">搜索引擎</a>|
+        <a href="javascript:;">网络游戏</a>|
+        <a href="javascript:;">电子商务</a>|
+        <a href="javascript:;">广告传媒</a>|
+        <a href="javascript:;">厂商开发</a>
+    </div>
+    <div class="box" style="display: none;">
+        <a href="javascript:;">收购融资</a>|
+        <a href="javascript:;">门户动态</a>|
+        <a href="javascript:;">搜索引擎</a>|
+        <a href="javascript:;">网络游戏</a>|
+        <a href="javascript:;">电子商务</a>|
+        <a href="javascript:;">广告传媒</a>|
+        <a href="javascript:;">厂商开发</a>
+    </div>
+    <div class="box" style="display: none;">
+        <a href="javascript:;">收购融资</a>|
+        <a href="javascript:;">门户动态</a>|
+        <a href="javascript:;">搜索引擎</a>|
+        <a href="javascript:;">网络游戏</a>|
+        <a href="javascript:;">电子商务</a>|
+        <a href="javascript:;">广告传媒</a>|
+        <a href="javascript:;">厂商开发</a>
+    </div>
+    <div class="box" style="display: none;">
+        <a href="javascript:;">收购融资</a>|
+        <a href="javascript:;">门户动态</a>|
+        <a href="javascript:;">搜索引擎</a>|
+        <a href="javascript:;">网络游戏</a>|
+        <a href="javascript:;">电子商务</a>|
+        <a href="javascript:;">广告传媒</a>|
+        <a href="javascript:;">厂商开发</a>
+    </div>
+    <div class="box" style="display: none;">
+        <a href="javascript:;">收购融资</a>|
+        <a href="javascript:;">门户动态</a>|
+        <a href="javascript:;">搜索引擎</a>|
+        <a href="javascript:;">网络游戏</a>|
+        <a href="javascript:;">电子商务</a>|
+        <a href="javascript:;">广告传媒</a>|
+        <a href="javascript:;">厂商开发</a>
+    </div>
+    <div class="box" style="display: none;">
+        <a href="javascript:;">收购融资</a>|
+        <a href="javascript:;">门户动态</a>|
+        <a href="javascript:;">搜索引擎</a>|
+        <a href="javascript:;">网络游戏</a>|
+        <a href="javascript:;">电子商务</a>|
+        <a href="javascript:;">广告传媒</a>|
+        <a href="javascript:;">厂商开发</a>
+    </div>
+    <div class="box" style="display: none;">
+        <a href="javascript:;">收购融资</a>|
+        <a href="javascript:;">门户动态</a>|
+        <a href="javascript:;">搜索引擎</a>|
+        <a href="javascript:;">网络游戏</a>|
+        <a href="javascript:;">电子商务</a>|
+        <a href="javascript:;">广告传媒</a>|
+        <a href="javascript:;">厂商开发</a>
+    </div>
+</body>
+
+</html>
+<script>
+    var li = document.querySelectorAll("li")
+    var div = document.querySelectorAll(".box")
+    for (var i = 0; i <li.length; i++) {
+        li[i].index=i
+        li[i].onmousemove = function () {
+            for(var k=0; k<div.length; k++){
+                div[this.index].style.display="block"
+            }
+        }
+        li[i].onmouseout=function(){
+            div[this.index].style.display="none"
+        }
+    }
+</script>
+<style>
+    ul {
+        width: 750px;
+        height: 50px;
+        background-color: #000;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        line-height: 50px;
+        list-style: none;
+    }
+</style>
