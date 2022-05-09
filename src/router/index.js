@@ -13,10 +13,60 @@ const routes = [
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import('../views/AboutView.vue'),
+    redirect:"/wok",
+    children:[
+      {
+        path:"/users",
+        name:"users",
+        component:()=> import('../views/lists/users')
+      },
+      {
+        path:"/roles",
+        name:"roles",
+        component:()=> import('../views/lists/roles')
+      },
+      {
+        path:"/rights",
+        name:"rights",
+        component:()=> import('../views/lists/rights')
+      },
+      {
+        path:"/goods",
+        name:"goods",
+        component:()=> import('../views/lists/goods')
+      },
+      {
+        path:"/add",
+        name:"add",
+        component:()=> import('../views/lists/add')
+      },
+      {
+        path:"/params",
+        name:"params",
+        component:()=> import('../views/lists/params')
+      },
+      {
+        path:"/categories",
+        name:"categories",
+        component:()=> import('../views/lists/categories')
+      },
+      {
+        path:"/orders",
+        name:"orders",
+        component:()=> import('../views/lists/orders')
+      },
+      {
+        path:"/reports",
+        name:"reports",
+        component:()=> import('../views/lists/reports')
+      },
+      {
+        path:"/wok",
+        name:"wok",
+        component:()=> import('../views/lists/wok')
+      },
+    ]
   }
 ]
 
