@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" style="display: block;">
+        <img src="./img/1.jpg" alt="">
+    </div>
+    <div class="box1" style="display: none;">
+        <img src="./img/2.jpg" alt="">
+    </div>
+    <div class="box2">
+        <img src="./img/btn.jpg" alt="">
+    </div>
+</body>
+</html>
+<script>
+    var box=document.querySelector(".box>img")
+    var box1=document.querySelector(".box1")
+    var box2=document.querySelector(".box2>img")
+    box2.addEventListener("mousedown",function(e){
+        console.log(e);
+        var X=e.clientX-box2.offsetLeft
+        var Y=e.clientY-box2.offsetTop
+        console.log(X,Y);
+        box2.onmouseover=function(e){
+            var l=e.clientX-X
+            box2.style.left=l+'px'
+            if(l>0){
+                box.style.display="none"
+                box2.style.display="none"
+                box1.style.display="block"
+            }
+        }
+    })
+</script>
+<style>
+    /* .box>img{ */
+        /* position: relative; */
+    /* } */
+    .box2>img{
+        position: fixed;
+        bottom: 320px;
+        left: 38px;
+    }
+</style>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" style="display: block;">
+        <p>
+            这是一个可以拖动的窗口 <span class="s" onclick="gb()">x</span><span class="p" onclick="fd()" ondblclick="sx()">口</span><span class="a" onclick="yc()">-</span>
+            <textarea cols="54" rows="10">
+①窗口可以拖动
+②窗口可以通过八个方向改变大小
+③窗口可以最小化、最大化、还原、关闭
+④窗口最小宽度/高度
+            </textarea>
+        </p>
+    </div>
+</body>
+</html>
+<script>
+    var box=document.querySelector(".box")
+    var a=document.querySelector("p>.a")
+    var s=document.querySelector("p>.s")
+    var p=document.querySelector("p>.p")
+    function yc(){
+        box.style.display="none"
+    }
+    function fd(){
+        box.setAttribute("style",'height:100vh !important')
+        box.setAttribute('style','width:100% !important')
+    }
+    function sx(){
+        box.setAttribute("style",'height:200vh !important')
+        box.setAttribute('style','width:400px !important')
+    }
+    function gb(){
+        box.style.display="none"
+    }
+</script>
+<style>
+    body,html{
+        width: 100%;
+        height: 100vh;
+        background: aqua;
+    }
+    .box{
+        width: 400px;
+        height: 200px;
+        text-align: center;
+        /* background: pink; */
+        /* position: relative; */
+    }
+    textarea{
+        width: 400px;
+        height: 200px;
+        position: absolute;
+        top: 0;
+        left: 0;right: 0;bottom: 0;margin: auto;
+        background: pink;
+    }
+    p{
+        background: pink;
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+    }
+    span{
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        float: right;
+    }
+</style>

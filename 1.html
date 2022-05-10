@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <img class="bigImg" src="./img/53706414.jpg" alt="">
+
+        <div class="btn_L"><img src="./img/btn.png" alt=""></div>
+        <div class="btn_R"><img src="./img/btn.png" alt=""></div>
+        <div class="titlt"><span></span></div>
+    </div>
+</body>
+
+</html>
+<script>
+    var bigImg = document.querySelector('.bigImg')
+    var bt_R = document.querySelector('.bt_R')
+    var btn_L = document.querySelector(".btn_L")
+    var btn_R = document.querySelector(".btn_R")
+    var img = document.querySelector(".img")
+    var title = document.querySelector(".titlt")
+    var active = 0
+    var aData = [{
+            "imgSrc": "./img/53706414.jpg",
+            "title": "7月26日,吊车将事故现场的车头残片吊至大型运输车辆上。"
+        },
+        {
+            "imgSrc": "./img/53706416.jpg",
+            "title": "7月26日,一辆大卡车准备驶离事故现场。"
+        },
+        {
+            "imgSrc": "./img/53706420.jpg",
+            "title": "7月26日,工人在给最后一节车厢盖上彩条布,准备运离现场。"
+        },
+        {
+            "imgSrc": "./img/53706421.jpg",
+            "title": "7月26日,一名工人在事故现场最后一节车厢上作业。"
+        },
+        {
+            "imgSrc": "http://img1.gtimg.com/news/pics/hv1/100/238/825/53706415.jpg",
+            "title": "7月26日,工人在给最后一节车厢盖上彩条布,准备运离现场。"
+        }
+    ];
+
+    btn_R.onclick = function () {
+        active++
+        if (active < aData.length) {
+            bigImg.src = aData[active].imgSrc
+        } else {
+            alert("已经是最后一页了")
+        }
+    }
+    btn_L.onclick = function () {
+       
+        if (active <= 0) {
+            alert("已经是最后一页了")
+        } else {
+             active--
+            bigImg.src = aData[active].imgSrc
+        }
+    }
+    // }
+</script>
+<style>
+    body,
+    html {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+        background: #000;
+    }
+
+    .box {
+        width: 800px;
+        height: 400px;
+        position: relative;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    .title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #000;
+        color: #fff;
+        opacity: 0.7;
+        font-size: 20px;
+        height: 50px;
+    }
+
+    .title span {
+        padding: 0;
+        line-height: 50px;
+        display: block;
+    }
+
+    .img {
+        background: url(./img/loading.gif) 50% 50% no-repeat;
+    }
+
+    .bt_L,
+    .bt_R {
+        position: absolute;
+        top: 0;
+        width: 400px;
+        height: 100%;
+        cursor: pointer;
+        background: #f0f0f0;
+        opacity: 1;
+    }
+
+    .bt_L {
+        left: 0;
+    }
+
+    .bt_R {
+        right: 0;
+    }
+
+    .btn_L {
+        left: 10px;
+        background-position: 0 0;
+    }
+
+    .btn_L,
+    .btn_R {
+        width: 39px;
+        height: 80px;
+        background: url(./img/btn.png);
+        position: absolute;
+        top: 50%;
+        overflow: hidden;
+        cursor: pointer;
+        text-indent: -9999px;
+    }
+
+    .btn_L {
+        left: 10px;
+        background-position: 0 0;
+        opacity: 1;
+    }
+
+    .btn_R {
+        right: 10px;
+        background-position: -39px 0;
+        opacity: 1;
+    }
+</style>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>
+<script>
+    var box1=document.querySelector('.box1')
+    box1.addEventListener("mousedown",function(e){
+        var X=e.clientX-box1.offsetLeft
+        var Y=e.clientY-box1.offsetTop
+        console.log(X,Y);
+        document.onmouseover=function(e){
+            var l=e.clientX-e.offsetX
+            var t=e.clientY-e.offsetY
+            box1.style.top=X+'px'
+            box1.style.left=Y+'px'
+        }
+    })
+</script>
+<style>
+    body,html{
+        width: 100%;
+        height: 100vh;
+        background-color: #999;
+    }
+    .box1{
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+</style>
